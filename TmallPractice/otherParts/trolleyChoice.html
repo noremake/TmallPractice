@@ -398,6 +398,10 @@
 			
 			
 			$('span#increase').click(function(){
+				chooseAll = $(".chooseAll").prop('checked');
+				chooseStore = $(".chooseStore").prop('checked');
+				chooseOne = $(".chooseOne").prop('checked');
+				
 				numbers = $('input#num').val();
 				numbers++;
 				if(numbers > 66){
@@ -412,6 +416,10 @@
 			});
 			
 			$('span#decrease').click(function(){
+				chooseAll = $(".chooseAll").prop('checked');
+				chooseStore = $(".chooseStore").prop('checked');
+				chooseOne = $(".chooseOne").prop('checked');
+				
 				numbers = $('input#num').val();
 				numbers--;
 				if(numbers < 0){
@@ -426,6 +434,10 @@
 			});
 			
 			$('input#num').keyup(function(){
+				chooseAll = $(".chooseAll").prop('checked');
+				chooseStore = $(".chooseStore").prop('checked');
+				chooseOne = $(".chooseOne").prop('checked');
+				
 				numbers = $('input#num').val();
 				if(numbers > 66){
 					numbers = 66;
