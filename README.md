@@ -1,16 +1,16 @@
 # **功能GIF展示**
 
-![](gif//主页总览.gif)
+![](TmallPractice//gif//主页总览.gif)
 
-![](gif//商品分类展示.gif)
+![](TmallPractice//gif//商品分类展示.gif)
 
-![](gif//商品详情页1.gif)
+![](TmallPractice//gif//商品详情页1.gif)
 
-![](gif//商品详情页2.gif)
+![](TmallPractice//gif//商品详情页2.gif)
 
-![](gif//购物车页面.gif)
+![](TmallPractice//gif//购物车页面.gif)
 
-![](gif//订单页面.gif)
+![](TmallPractice//gif//订单页面.gif)
 
 
 
