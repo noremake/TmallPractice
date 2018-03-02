@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>订单管理</title>
+		
+		<style>
+			body{
+				margin: 0;
+				padding: 0;
+				font-size: 12px;
+				font-family: arial;
+			}
+			
+			h5{
+				font-size: 15px;
+				font-weight: normal;
+			}
+			
+			div.page{
+				max-width: 1366px;
+				margin: 0 auto;
+			}
+			
+			div.trolleyContent{
+				width: 1013px;
+				margin: 0 auto;
+			}
+			
+			span.eachAddress{
+				display: inline-block;
+				width: 99%;
+				height: 98%;
+				line-height: 25px;
+				margin-right: 10px;
+				cursor: pointer;
+				border: 1px solid #E3E3E3;
+				font-size: 12px;
+			}
+			
+			span.border{
+				display: inline-block;
+				width: 250px;
+				height: 80px;
+				border: 3px solid transparent;
+			}
+			
+			span.border:hover{
+				border-width: 3px;
+				border-image: url(../img/borderimg.png) 30 30 round;
+			}
+			
+			
+			span.eachAddress div:nth-child(1){
+				border-bottom: 1px solid #E3E3E3;
+			}
+			
+			span.eachAddress a{
+				text-decoration: none;
+				color: goldenrod;
+			}
+			
+			div.manageAddress{
+				margin: 10px 0;
+			}
+			
+			div.manageAddress a{
+				color: goldenrod;
+				text-decoration: none;
+			}
+			
+			table{
+				width: 100%;
+			}
+			
+			
+			td{
+				padding: 0 5px;
+			}
+			
+			b{
+				color: red;
+			}
+			
+			
+			tr.buy-title td{
+				text-align: center;
+				padding: 5px 0;
+				border-bottom: 2px solid lightskyblue;
+			}
+			
+			tr.shop-name td{
+				padding: 20px 0 5px 0;
+				border-bottom: 1px dotted skyblue;
+			}
+			
+			tr.shop-name img{
+				width: 15px;
+				height: 15px;
+				vertical-align: middle;
+			}
+			
+			tr.shop-name span:nth-child(2){
+				color: #666666;
+				font-size: 11.5px;
+			}
+			
+			tr.product-detail td{
+				vertical-align: top;
+				padding-top: 7px;
+			}
+			
+			tr.product-detail td:nth-child(3),
+			tr.product-detail td:nth-child(4),
+			tr.product-detail td:nth-child(5){
+				text-align: center;
+			}
+			
+			tr.product-detail td:nth-child(5) img{
+				vertical-align: top;
+			}
+			
+			img.buyProductImg{
+				width: 50px;
+				height: 50px;
+				vertical-align: top;
+			}
+			
+			tr.product-detail td > span{
+				display: inline-block;
+			}
+			
+			span.serviceImg{
+				display: block;
+			}
+			
+			span.serviceImg img:nth-child(1),
+			span.serviceImg img:nth-child(2){
+				width: 17px;
+				height: 17px;
+			}
+			
+			span.serviceImg img:nth-child(3){
+				width: 22px;
+				height: 17px;
+			}
+			
+			tr.product-detail td:nth-child(2){
+				color: #666;
+			}
+			
+			tr.product-detail td:nth-child(6){
+				text-align: right;
+			}
+			
+			tr.information td:nth-child(1){
+				padding-top: 8px;
+				padding-bottom: 8px;
+			}
+			
+			tr.product-detail{
+				background-color: #f6f6ff;
+			}
+			
+			tr.information,tr.psmessage,
+			tr.insurance,tr.total{
+				background-color: #f2f6ff;
+			}
+			
+			tr.information td:nth-child(2){
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}
+			
+			tr.information div:nth-child(1),
+			tr.information div:nth-child(2){
+				padding: 5px 0;
+			}
+			
+			tr.total{
+				padding-bottom: 1px;
+				text-align: right;
+				line-height: 15px;
+			}
+			
+			tr.total td{
+				padding: 15px 5px 15px 0;
+				border-bottom: 1px dotted skyblue;
+			}
+			
+			tr.total td b{
+				font-size: 20px;
+			}
+			
+			tr.paymessage{
+				text-align: right;
+				line-height: 15px;
+			}
+			
+			tr.paymessage td{
+				padding: 10px 5px 5px 0;
+				border-bottom: 1px dotted #E3E3E3;
+				padding-bottom: 10px;
+			}
+			
+			tr.paymessage input{
+				vertical-align: middle;
+			}
+			
+			tr.paymessage img{
+				vertical-align: bottom;
+			}
+			tr.insurance input{
+				vertical-align: middle;
+			}
+			
+			tr.insurance span{
+				background-color: green;
+				color: white;
+				padding: 1px 0;
+			}
+			
+			tr.insurance img{
+				vertical-align: middle;
+			}
+			
+			.pricenumber{
+				text-align: right;
+				padding: 7px 5px 0 0;
+				height: 100%;
+			}
+			
+			div.sendOrder,div.sendOrderButton{
+				float: right;
+			}
+			
+			div.sendOrder{
+				background-color: mistyrose;
+				width: 300px;
+				height: 100px;
+				border: 1px solid red;
+				position: relative;
+				margin-top: 10px;
+			}
+			
+			
+			
+			div.sendOrder div{
+				text-align: right;
+				padding-right: 5px;
+			}
+			
+			div.sendOrderButton{
+				width: 150px;
+				height: 30px;
+				background-color: red;
+				text-align: center;
+				padding-top: 6px;
+				cursor: pointer;
+			}
+			
+			div.sendOrderButton button{
+				background-color: red;
+				color: white;
+				border: none;
+			}
+			
+			div.orderPrice{
+				padding: 8px 0;
+			}
+			
+			div.orderAddress{
+				padding: 2px 0;
+			}
+			
+			div.sendOrderWhite{
+				background-color: white;
+				width: 290px;
+				height: 94px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			
+			div.sendOrder span.tobold{
+				font-weight: bold;
+			}
+			
+			span.finalPrice{
+				font-size: 30px;
+			}
+			
+			span.finalPrice span{
+				color: gray;
+			}
+			
+			div.progressBarpart{
+				width: 1013px;
+				margin: 30px auto;
+			}
+			
+			div.progressbarImg{
+				width: 150px;
+				height: 22px;
+				display: inline-block;
+			}
+			
+			div.progressbarImg img{
+				width: 100%;
+				height: 100%;
+			}
+			
+			div.progressBar{
+				width: 600px;
+				display: inline-block;
+				position: relative;
+				float: right;
+			}
+			
+			span.circle{
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				border-radius: 15px;
+				background-color: lightgray;
+				color: white;
+				font-size: 16px;
+				font-weight: bold;
+				text-align: center;
+				line-height: 30px;
+			}
+			
+			span.circle:nth-of-type(1){
+				position: absolute;
+				left: -1px;
+				top: -50%;
+			}
+			
+			span.circle:before{
+				position: absolute;
+				display: inline-block;
+				width: 100px;
+				top: -25px;
+				transform: translate(-45%);
+				color: gray;
+				font-size: 12px;
+			}
+			
+			span.circle:nth-of-type(1):before{
+				content: "拍下商品";
+			}
+			
+			span.circle:nth-of-type(2):before{
+				content: "付款到支付宝";
+			}
+			
+			span.circle:nth-of-type(3):before{
+				content: "确认收货";
+			}
+			
+			span.circle:nth-of-type(4):before{
+				content: "评价";
+			}
+			
+			
+			span.circle:nth-of-type(2){
+				position: absolute;
+				left: 33.33%;
+				top: -50%;
+			}
+			
+			span.circle:nth-of-type(3){
+				position: absolute;
+				left: 66.66%;
+				top: -50%;
+			}
+			
+			span.circle:nth-of-type(4){
+				position: absolute;
+				right: -1px;
+				top: -50%;
+			}
+			
+			span.bar{
+				display: inline-block;
+				width: 100%;
+				height: 10px;
+				vertical-align: middle;
+				background-color: lightgray;
+			}
+			
+			iframe:last-child{
+				margin-top: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<iframe scrolling="no"
+            frameborder="0" src="../sharedParts/topPart.html" 
+            style="width: 100%;height: 50px;padding: 0;margin: 0;"></iframe>
+		<!--pageDIV-->
+		<div class="page">
+			<div class="progressBarpart">
+				<div class="progressbarImg"><img src="../img/tmallLogo.png"/></div>
+				<div class="progressBar">
+					<span>
+						<span class="circle">1</span>
+						<span class="circle">2</span>
+						<span class="circle">3</span>
+						<span class="circle">4</span>
+						<span class="bar"></span>
+					</span>
+				</div>
+			</div>
+			<!--天猫图标和progressbarDIV-->
+			<div class="trolleyContent">
+				<h5>选择收货地址</h5>
+				<div class="address">
+					<span class="border">
+						<span class="eachAddress">
+							<div>上海<b>上海</b><span>（小明 收）</span></div>
+							<div>浦东新区</div>
+							<div><a href="#">修改</a></div>
+						</span>
+					</span>
+					<span class="border">
+						<span class="eachAddress">
+							<div>江苏<b>南京</b><span>（小明 收）</span></div>
+							<div>六合区</div>
+							<div><a href="#">修改</a></div>
+						</span>
+					</span>
+				</div>
+				
+				<div class="manageAddress">
+					<a href="#">管理收货地址</a>
+				</div>
+			
+				<h5>确认订单信息</h5>
+				<!--地址选择DIV-->
+				<table>
+					<tr class="buy-title">
+						<td>店铺宝贝</td>
+						<td>商品属性</td>
+						<td>单价</td>
+						<td>数量</td>
+						<td>优惠方式</td>
+						<td>小计</td>
+					</tr>
+					<tr class="shop-name">
+						<td colspan="6">
+							<img src="../img/天猫小标志.png" />
+							<span>店铺:</span>
+							<span>雷蛇旗舰店</span>
+							<img src="../img/wangwang.png" />
+						</td>
+					</tr>
+					<tr class="product-detail">
+						<td>
+							<img class="buyProductImg" src="../img/razerImg/razer01.jpg" />
+							<span>
+								<span>雷蛇炼狱蝰蛇鼠标</span>
+								<span class="serviceImg">
+									<img src="../img/七天无理由.png" />
+									<img src="../img/消费者保障.png" />
+									<img src="../img/支持信用卡支付.png" />
+								</span>
+							</span>
+						</td>
+						<td>
+							<div>套餐类型：官方标配</div>
+							<div>颜色分类：黑色</div>
+						</td>
+						<td>229.00</td>
+						<td>1</td>
+						<td>
+							省80:火热促销
+							<img src="../img/操作-评论.png" />
+						</td>
+						<td><b>149.00</b></td>
+					</tr>
+					<tr class="information">
+						<td rowspan="3" colspan="2">
+							<div>
+								<span>发票抬头类型：</span>
+								<input type="radio" />个人
+								<input type="radio" />企业
+							</div>
+							<div>
+								<span>发票抬头：</span>
+								<span>小明</span>
+								<a href="#">修改</a>
+							</div>
+						</td>
+						<td rowspan="2" colspan="3">
+								<span>运送方式：</span>普通配送快递 免邮
+						</td>
+						<td rowspan="2" class="pricenumber">
+							<b>0.00</b>
+						</td>
+					</tr>
+					<tr>
+						
+					</tr>
+					<tr class="insurance">
+						<td rowspan="2" colspan="3">
+							运费险：
+							<input type="checkbox" />
+							<span>运费险</span>
+							卖家送,确认收货前退货可赔
+							<img src="../img/操作-评论.png" />
+							<img src="../img/问号.png" />
+						</td>
+						<td rowspan="2" class="pricenumber">
+							<b>0.00</b>
+						</td>
+					</tr>
+					<tr class="psmessage">
+						<td colspan="2">
+							给卖家留言：
+							<input type="text" />
+						</td>
+					</tr>
+					<tr class="total">
+						<td colspan="6">
+							<span>
+								店铺合计(含运费)
+								<b>￥149.00</b>
+							</span>
+						</td>
+					</tr>
+					<tr class="paymessage">
+						<td colspan="6">
+							<div>
+								<span>
+									<input type="checkbox" />
+									找人代付
+								</span>
+								<span>
+									<input type="checkbox" />
+									匿名购买
+								</span>
+								<span>
+									<input type="checkbox" />
+									花呗分期
+									<img src="../img/操作-评论.png" />
+								</span>
+							</div>
+							<div>
+								<img src="../img/灯.png" />
+								商品单价大于等于600.00元才能使用分期
+							</div>
+						</td>
+					</tr>
+				</table>
+				<!--<div>
+					<div>
+						<span>店铺宝贝</span>
+						<span>店铺宝贝</span>
+						<span>单价</span>
+						<span>数量</span>
+						<span>优惠方式</span>
+						<span>小计</span>
+					</div>
+					<div>
+						<img src="../img/天猫小标志.png" />
+						店铺：
+						<span>雷蛇旗舰店</span>
+						<img src="../img/wangwang.png" />
+					</div>
+					<div>
+						<img src="../img/razerImg/razer01.jpg" />
+						<span>
+							<span>雷蛇炼狱蝰蛇鼠标</span>
+							<span>颜色分类：黑色</span>
+							<span>
+								<img src="../img/七天无理由.png" />
+								<img src="../img/消费者保障.png" />
+								<img src="../img/支持信用卡支付.png" />
+							</span>
+						</span>
+						
+					</div>
+				</div>-->
+				<!--提交订单DIV-->
+				<div class="sendOrder">
+					<div class="sendOrderWhite">
+						<div class="orderPrice">
+							<span class="tobold">实付款：</span>
+							<span class="finalPrice"><span>￥</span><b>149</b></span>
+						</div>
+						<div class="orderAddress">
+							<span class="tobold">寄送至：</span><span>上海浦东新区</span>
+						</div>
+						<div class="orderbuyer">
+							<span class="tobold">收货人：</span><span>小明</span>
+						</div>
+					</div>
+				</div>
+				<div style="clear: right;"></div>
+				<div class="sendOrderButton">
+					<span>
+						<button>提交订单</button>
+					</span>
+				</div>
+			</div>
+		</div>
+		
+		<iframe src="../sharedParts/bottomPart.html" frameborder="no" width="100%" height="535px"></iframe>
+	</body>
+</html>

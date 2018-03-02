@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>天猫tmall.com--理想生活上天猫</title>
+		
+		<style>
+			body{
+				font-size: 12px;
+				font-family: arial;
+				margin: 0;
+				padding: 0;
+			}
+			
+			div.topNav{
+				width: 1150px;
+				margin-left: 100px;
+			}
+			
+			div.topNav *{
+				vertical-align: middle;
+				padding: 0 10px;
+			}
+			
+			
+			
+			div.topNav span{
+				text-align: center;
+				padding-top: 6px;
+				display: inline-block;
+				background-color: red;
+				color: white;
+				font-weight: bold;
+				font-size: 16px;
+				height: 32px;
+				width: 150px;
+			}
+			
+			div.topNav a{
+				font-size: 16px;
+				text-decoration: none;
+				color: black;
+			}
+			
+			div.topNav a:hover{
+				color: red;
+			}
+			
+			.topNav img{
+				height: 29px;
+				cursor: pointer;
+			}
+			
+			div.carouselImg{
+				margin: 0 auto;
+				border-top: 1px solid red;
+				height: 500px;
+				width: 1366px;
+			}
+			
+			div.carouselImg img{
+				width: 100%;
+				height: 100%;
+			}
+			
+			div.backgroundPage{
+				width: 100%;
+				margin: 0 auto;
+				
+			}
+			
+			div.mainPart{
+				position: relative;
+			}
+			
+			div.TmCategory{
+				position: absolute;
+				left: 100px;
+				top: 39px;
+				background-color: #000000;
+				width: 170px;
+				height: 500px;
+				z-index: 1;
+				opacity: 0.5;
+			}
+			
+			div.categoryDetails{
+				position: absolute;
+				top: 40px;
+				left: 270px;
+				height: 499px;
+				width: 600px;
+				background-color: #FFFFFF;
+				z-index: 1;
+			}
+			
+			div.TmCategory a{
+				display: block;
+				color: white;
+				font-size: 14px;
+				text-decoration: none;
+				padding: 5px 10px;
+			}
+			
+			div.TmCategory a:hover{
+				color: red;
+				font-weight: bold;
+				background-color: white;
+			}
+			
+			span.detailsTitle{
+				font-size: 14px;
+				font-weight: bold;
+				display: inline-block;
+			}
+			
+			div.categoryDetails a{
+				text-decoration: none;
+				color: gray;
+				font-size: 14px;
+				display: inline-block;
+			}
+			
+			div.categoryDetails div{
+				padding: 10px 20px;
+				
+			}
+			
+			
+			
+			span.detailsLinks{
+				border-bottom: 1px dashed #E7E7E7;
+				display: inline-block;
+				width: 450px;
+				padding-bottom: 10px;
+			}
+			
+			div.categoryDetails *{
+				padding: 0 10px;
+				vertical-align: top;
+			}
+			
+			div.categoryDetails a:hover{
+				color: red;
+			}
+			
+			div.products span.productsImg{
+				display: inline-block;
+				width: 210px;
+				height: 280px;
+				padding: 10px 0 0 20px;
+				border: 1px solid transparent;
+				background-color: white;
+			}
+			
+			div.products span.productsImg:hover{
+				border: 1px solid red;
+				opacity: 0.8;
+			}
+			
+			.imgDistance{
+				margin: 0 10px 10px 0;
+			}
+			
+			div.products img{
+				width: 180px;
+				height: 180px;
+			}
+			
+			div.products{
+				height: 600px;
+			}
+			
+			div.tmProducts{
+				padding: 20px 0 0 100px;
+				width: 1366px;
+			}
+			
+			div.standImg{
+				width: 235px;
+				height: 596px;
+				float: left;
+			}
+			
+			div.standImg img{
+				width: 100%;
+				height: 100%;
+			}
+			
+			div.products p{
+				text-overflow: ellipsis;
+				overflow: hidden;
+				line-height: 22px;
+				height: 44px;
+				width: 150px;
+				font-size: 16px;
+				margin: 0 auto;
+				color: black;
+			}
+			
+			span#youlike{
+				display: inline-block;
+				width: 100%;
+				font-size: 20px;
+				text-align: center;
+				color: gray;
+			}
+			
+			div.products h2{
+				text-align: center;
+				color: red;
+				margin-left: -20px;
+			}
+			
+			div.eachProductsTitle{
+				margin: 30px 0 10px 0;
+				width: 1220px;
+			}
+			
+			div.eachProductsTitle .greenSquare{
+				display: inline-block;
+				height: 20px;
+				width: 5px;
+				background-color: green;
+				margin-right: 10px;
+			}
+			
+			div.eachProductsTitle h2,h3{
+				display: inline;
+			}
+			
+			div.eachProductsTitle a{
+				text-decoration: none;
+				color: black;
+				font-size: 16px;
+				padding: 0 10px;
+			}
+			
+			div.eachProductsTitle *{
+				vertical-align: middle;
+			}
+			
+			div.eachProductsTitle #youlike{
+				text-align: center;
+			}
+			
+			.pullRight{
+				float: right;
+			}
+			
+			div.standImg:hover{
+				opacity: 0.8;
+			}
+			
+			div.productsBg{
+				background-color: #f2f2f2;
+				width: 1366px;
+				margin: 0 auto;
+				padding-bottom: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<iframe scrolling="no"
+            frameborder="0" src="../sharedParts/topPart.html" 
+            style="width: 100%;height: 50px;padding: 0;margin: 0;"></iframe>
+        
+        <iframe scrolling="auto"
+            frameborder="0" src="../sharedParts/mainPageSearch.html" 
+            style="width: 100%;height: 100%;padding: 0;margin: 0;"></iframe>
+		<div class="backgroundPage">
+			<div class="mainPart">
+				<div class="topNav">
+					<span>
+						商品分类
+					</span>
+					<img src="../img/tmMarket.png" />
+					<img src="../img/tmInternation.png" />
+					<a href="#">天猫会员</a>
+					<a href="#">电器城</a>
+					<a href="#">喵鲜生</a>
+					<a href="#">医药馆</a>
+					<a href="#">营业厅</a>
+					<a href="#">魅力惠</a>
+					<a href="#">飞猪旅行</a>
+					<a href="#">苏宁易购</a>
+				</div>
+				
+				<div class="TmCategory">
+					<a href="#" tid="1">女装/内衣</a>
+					<a href="#" tid="2">男装/运动户外</a>
+					<a href="#" tid="3">美妆/个人护理</a>
+					<a href="#" tid="4">腕表/眼镜/珠宝饰品</a>
+					<a href="#" tid="5">手机/数码/电脑办公</a>
+					<a href="#" tid="6">母婴玩具</a>
+					<a href="#" tid="7">零食/茶酒/进口食品</a>
+					<a href="#" tid="8">生鲜水果</a>
+					<a href="#" tid="9">大家电/生活电器</a>
+					<a href="#" tid="10">家具建材</a>
+					<a href="#" tid="11">汽车/配件/用品</a>
+					<a href="#" tid="12">医药保健</a>
+				</div>
+				
+				<div class="categoryDetails" tid="1" style="display: none;">
+					<div>
+						<span class="detailsTitle">热门手机</span>
+						<span class="detailsLinks">
+							<a href="#">小米</a>
+							<a href="#">iPhone</a>
+							<a href="#">魅族</a>
+							<a href="#">荣耀</a>
+							<a href="#">乐视</a>
+							<a href="#">oppo</a>
+							<a href="#">vivo</a>
+							<a href="#">三星</a>
+							<a href="#">华为</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">特色手机</span>
+						<span class="detailsLinks">
+							<a href="#">yunos</a>
+							<a href="#">千元指纹</a>
+							<a href="#">双卡双待</a>
+							<a href="#">大屏</a>
+							<a href="#">自拍</a>
+							<a href="#">移动</a>
+							<a href="#">联通</a>
+							<a href="#">电信</a>
+							<a href="#">合约机</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">电脑整机</span>
+						<span class="detailsLinks">
+							<a href="#">笔记本</a>
+							<a href="#">平板电脑</a>
+							<a href="#">台式机</a>
+							<a href="#">一体机</a>
+							<a href="#">diy</a>
+							<a href="#">游戏本</a>
+							<a href="#">ipad</a>
+							<a href="#">Surface</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">智能数码</span>
+						<span class="detailsLinks">
+							<a href="#">智能设备</a>
+							<a href="#">智能手表</a>
+							<a href="#">智能手环</a>
+							<a href="#">VR眼镜</a>
+							<a href="#">智能摄像</a>
+							<a href="#">智能健康</a>
+							<a href="#">智能机器人</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">游戏组装</span>
+						<span class="detailsLinks">
+							<a href="#">DIY电脑</a>
+							<a href="#">竞技DIY</a>
+							<a href="#">显示器</a>
+							<a href="#">游戏本</a>
+							<a href="#">机械键盘</a>
+							<a href="#">xbox</a>
+							<a href="#">游戏手柄</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">硬件存储</span>
+						<span class="detailsLinks">
+							<a href="#">显示器</a>
+							<a href="#">机械键盘</a>
+							<a href="#">固态硬盘</a>
+							<a href="#">u</a>
+							<a href="#">显卡</a>
+							<a href="#">主板</a>
+							<a href="#">高速U盘</a>
+							<a href="#">路由器</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">摄影摄像</span>
+						<span class="detailsLinks">
+							<a href="#">相机</a>
+							<a href="#">单反</a>
+							<a href="#">单电微单</a>
+							<a href="#">摄像机</a>
+							<a href="#">自拍神器</a>
+							<a href="#">拍立得</a>
+							<a href="#">镜头</a>
+							<a href="#">自拍杆</a>
+						</span>
+					</div>
+					
+					<div style="color: red; text-align: center;">第1页</div>
+				</div>
+				
+				<div class="categoryDetails" tid="2" style="display: none;">
+					<div>
+						<span class="detailsTitle">热门手机</span>
+						<span class="detailsLinks">
+							<a href="#">小米</a>
+							<a href="#">iPhone</a>
+							<a href="#">魅族</a>
+							<a href="#">荣耀</a>
+							<a href="#">乐视</a>
+							<a href="#">oppo</a>
+							<a href="#">vivo</a>
+							<a href="#">三星</a>
+							<a href="#">华为</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">特色手机</span>
+						<span class="detailsLinks">
+							<a href="#">yunos</a>
+							<a href="#">千元指纹</a>
+							<a href="#">双卡双待</a>
+							<a href="#">大屏</a>
+							<a href="#">自拍</a>
+							<a href="#">移动</a>
+							<a href="#">联通</a>
+							<a href="#">电信</a>
+							<a href="#">合约机</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">电脑整机</span>
+						<span class="detailsLinks">
+							<a href="#">笔记本</a>
+							<a href="#">平板电脑</a>
+							<a href="#">台式机</a>
+							<a href="#">一体机</a>
+							<a href="#">diy</a>
+							<a href="#">游戏本</a>
+							<a href="#">ipad</a>
+							<a href="#">Surface</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">智能数码</span>
+						<span class="detailsLinks">
+							<a href="#">智能设备</a>
+							<a href="#">智能手表</a>
+							<a href="#">智能手环</a>
+							<a href="#">VR眼镜</a>
+							<a href="#">智能摄像</a>
+							<a href="#">智能健康</a>
+							<a href="#">智能机器人</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">游戏组装</span>
+						<span class="detailsLinks">
+							<a href="#">DIY电脑</a>
+							<a href="#">竞技DIY</a>
+							<a href="#">显示器</a>
+							<a href="#">游戏本</a>
+							<a href="#">机械键盘</a>
+							<a href="#">xbox</a>
+							<a href="#">游戏手柄</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">硬件存储</span>
+						<span class="detailsLinks">
+							<a href="#">显示器</a>
+							<a href="#">机械键盘</a>
+							<a href="#">固态硬盘</a>
+							<a href="#">u</a>
+							<a href="#">显卡</a>
+							<a href="#">主板</a>
+							<a href="#">高速U盘</a>
+							<a href="#">路由器</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">摄影摄像</span>
+						<span class="detailsLinks">
+							<a href="#">相机</a>
+							<a href="#">单反</a>
+							<a href="#">单电微单</a>
+							<a href="#">摄像机</a>
+							<a href="#">自拍神器</a>
+							<a href="#">拍立得</a>
+							<a href="#">镜头</a>
+							<a href="#">自拍杆</a>
+						</span>
+					</div>
+					
+					<div style="color: red; text-align: center;">第2页</div>
+				</div>
+				
+				<div class="categoryDetails" tid="3" style="display: none;">
+					<div>
+						<span class="detailsTitle">热门手机</span>
+						<span class="detailsLinks">
+							<a href="#">小米</a>
+							<a href="#">iPhone</a>
+							<a href="#">魅族</a>
+							<a href="#">荣耀</a>
+							<a href="#">乐视</a>
+							<a href="#">oppo</a>
+							<a href="#">vivo</a>
+							<a href="#">三星</a>
+							<a href="#">华为</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">特色手机</span>
+						<span class="detailsLinks">
+							<a href="#">yunos</a>
+							<a href="#">千元指纹</a>
+							<a href="#">双卡双待</a>
+							<a href="#">大屏</a>
+							<a href="#">自拍</a>
+							<a href="#">移动</a>
+							<a href="#">联通</a>
+							<a href="#">电信</a>
+							<a href="#">合约机</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">电脑整机</span>
+						<span class="detailsLinks">
+							<a href="#">笔记本</a>
+							<a href="#">平板电脑</a>
+							<a href="#">台式机</a>
+							<a href="#">一体机</a>
+							<a href="#">diy</a>
+							<a href="#">游戏本</a>
+							<a href="#">ipad</a>
+							<a href="#">Surface</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">智能数码</span>
+						<span class="detailsLinks">
+							<a href="#">智能设备</a>
+							<a href="#">智能手表</a>
+							<a href="#">智能手环</a>
+							<a href="#">VR眼镜</a>
+							<a href="#">智能摄像</a>
+							<a href="#">智能健康</a>
+							<a href="#">智能机器人</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">游戏组装</span>
+						<span class="detailsLinks">
+							<a href="#">DIY电脑</a>
+							<a href="#">竞技DIY</a>
+							<a href="#">显示器</a>
+							<a href="#">游戏本</a>
+							<a href="#">机械键盘</a>
+							<a href="#">xbox</a>
+							<a href="#">游戏手柄</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">硬件存储</span>
+						<span class="detailsLinks">
+							<a href="#">显示器</a>
+							<a href="#">机械键盘</a>
+							<a href="#">固态硬盘</a>
+							<a href="#">u</a>
+							<a href="#">显卡</a>
+							<a href="#">主板</a>
+							<a href="#">高速U盘</a>
+							<a href="#">路由器</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">摄影摄像</span>
+						<span class="detailsLinks">
+							<a href="#">相机</a>
+							<a href="#">单反</a>
+							<a href="#">单电微单</a>
+							<a href="#">摄像机</a>
+							<a href="#">自拍神器</a>
+							<a href="#">拍立得</a>
+							<a href="#">镜头</a>
+							<a href="#">自拍杆</a>
+						</span>
+					</div>
+					
+					<div style="color: red; text-align: center;">第3页</div>
+				</div>
+				
+				<div class="categoryDetails" tid="4" style="display: none;">
+					<div>
+						<span class="detailsTitle">热门手机</span>
+						<span class="detailsLinks">
+							<a href="#">小米</a>
+							<a href="#">iPhone</a>
+							<a href="#">魅族</a>
+							<a href="#">荣耀</a>
+							<a href="#">乐视</a>
+							<a href="#">oppo</a>
+							<a href="#">vivo</a>
+							<a href="#">三星</a>
+							<a href="#">华为</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">特色手机</span>
+						<span class="detailsLinks">
+							<a href="#">yunos</a>
+							<a href="#">千元指纹</a>
+							<a href="#">双卡双待</a>
+							<a href="#">大屏</a>
+							<a href="#">自拍</a>
+							<a href="#">移动</a>
+							<a href="#">联通</a>
+							<a href="#">电信</a>
+							<a href="#">合约机</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">电脑整机</span>
+						<span class="detailsLinks">
+							<a href="#">笔记本</a>
+							<a href="#">平板电脑</a>
+							<a href="#">台式机</a>
+							<a href="#">一体机</a>
+							<a href="#">diy</a>
+							<a href="#">游戏本</a>
+							<a href="#">ipad</a>
+							<a href="#">Surface</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">智能数码</span>
+						<span class="detailsLinks">
+							<a href="#">智能设备</a>
+							<a href="#">智能手表</a>
+							<a href="#">智能手环</a>
+							<a href="#">VR眼镜</a>
+							<a href="#">智能摄像</a>
+							<a href="#">智能健康</a>
+							<a href="#">智能机器人</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">游戏组装</span>
+						<span class="detailsLinks">
+							<a href="#">DIY电脑</a>
+							<a href="#">竞技DIY</a>
+							<a href="#">显示器</a>
+							<a href="#">游戏本</a>
+							<a href="#">机械键盘</a>
+							<a href="#">xbox</a>
+							<a href="#">游戏手柄</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">硬件存储</span>
+						<span class="detailsLinks">
+							<a href="#">显示器</a>
+							<a href="#">机械键盘</a>
+							<a href="#">固态硬盘</a>
+							<a href="#">u</a>
+							<a href="#">显卡</a>
+							<a href="#">主板</a>
+							<a href="#">高速U盘</a>
+							<a href="#">路由器</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">摄影摄像</span>
+						<span class="detailsLinks">
+							<a href="#">相机</a>
+							<a href="#">单反</a>
+							<a href="#">单电微单</a>
+							<a href="#">摄像机</a>
+							<a href="#">自拍神器</a>
+							<a href="#">拍立得</a>
+							<a href="#">镜头</a>
+							<a href="#">自拍杆</a>
+						</span>
+					</div>
+					
+					<div style="color: red; text-align: center;">第4页</div>
+				</div>
+				
+				<div class="categoryDetails" tid="5" style="display: none;">
+					<div>
+						<span class="detailsTitle">热门手机</span>
+						<span class="detailsLinks">
+							<a href="#">小米</a>
+							<a href="#">iPhone</a>
+							<a href="#">魅族</a>
+							<a href="#">荣耀</a>
+							<a href="#">乐视</a>
+							<a href="#">oppo</a>
+							<a href="#">vivo</a>
+							<a href="#">三星</a>
+							<a href="#">华为</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">特色手机</span>
+						<span class="detailsLinks">
+							<a href="#">yunos</a>
+							<a href="#">千元指纹</a>
+							<a href="#">双卡双待</a>
+							<a href="#">大屏</a>
+							<a href="#">自拍</a>
+							<a href="#">移动</a>
+							<a href="#">联通</a>
+							<a href="#">电信</a>
+							<a href="#">合约机</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">电脑整机</span>
+						<span class="detailsLinks">
+							<a href="#">笔记本</a>
+							<a href="#">平板电脑</a>
+							<a href="#">台式机</a>
+							<a href="#">一体机</a>
+							<a href="#">diy</a>
+							<a href="#">游戏本</a>
+							<a href="#">ipad</a>
+							<a href="#">Surface</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">智能数码</span>
+						<span class="detailsLinks">
+							<a href="#">智能设备</a>
+							<a href="#">智能手表</a>
+							<a href="#">智能手环</a>
+							<a href="#">VR眼镜</a>
+							<a href="#">智能摄像</a>
+							<a href="#">智能健康</a>
+							<a href="#">智能机器人</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">游戏组装</span>
+						<span class="detailsLinks">
+							<a href="#">DIY电脑</a>
+							<a href="#">竞技DIY</a>
+							<a href="#">显示器</a>
+							<a href="#">游戏本</a>
+							<a href="#">机械键盘</a>
+							<a href="#">xbox</a>
+							<a href="#">游戏手柄</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">硬件存储</span>
+						<span class="detailsLinks">
+							<a href="#">显示器</a>
+							<a href="#">机械键盘</a>
+							<a href="#">固态硬盘</a>
+							<a href="#">u</a>
+							<a href="#">显卡</a>
+							<a href="#">主板</a>
+							<a href="#">高速U盘</a>
+							<a href="#">路由器</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">摄影摄像</span>
+						<span class="detailsLinks">
+							<a href="#">相机</a>
+							<a href="#">单反</a>
+							<a href="#">单电微单</a>
+							<a href="#">摄像机</a>
+							<a href="#">自拍神器</a>
+							<a href="#">拍立得</a>
+							<a href="#">镜头</a>
+							<a href="#">自拍杆</a>
+						</span>
+					</div>
+					
+					<div style="color: red; text-align: center;">第5页</div>
+				</div>
+				
+				<div class="categoryDetails" tid="6" style="display: none;">
+					<div>
+						<span class="detailsTitle">热门手机</span>
+						<span class="detailsLinks">
+							<a href="#">小米</a>
+							<a href="#">iPhone</a>
+							<a href="#">魅族</a>
+							<a href="#">荣耀</a>
+							<a href="#">乐视</a>
+							<a href="#">oppo</a>
+							<a href="#">vivo</a>
+							<a href="#">三星</a>
+							<a href="#">华为</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">特色手机</span>
+						<span class="detailsLinks">
+							<a href="#">yunos</a>
+							<a href="#">千元指纹</a>
+							<a href="#">双卡双待</a>
+							<a href="#">大屏</a>
+							<a href="#">自拍</a>
+							<a href="#">移动</a>
+							<a href="#">联通</a>
+							<a href="#">电信</a>
+							<a href="#">合约机</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">电脑整机</span>
+						<span class="detailsLinks">
+							<a href="#">笔记本</a>
+							<a href="#">平板电脑</a>
+							<a href="#">台式机</a>
+							<a href="#">一体机</a>
+							<a href="#">diy</a>
+							<a href="#">游戏本</a>
+							<a href="#">ipad</a>
+							<a href="#">Surface</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">智能数码</span>
+						<span class="detailsLinks">
+							<a href="#">智能设备</a>
+							<a href="#">智能手表</a>
+							<a href="#">智能手环</a>
+							<a href="#">VR眼镜</a>
+							<a href="#">智能摄像</a>
+							<a href="#">智能健康</a>
+							<a href="#">智能机器人</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">游戏组装</span>
+						<span class="detailsLinks">
+							<a href="#">DIY电脑</a>
+							<a href="#">竞技DIY</a>
+							<a href="#">显示器</a>
+							<a href="#">游戏本</a>
+							<a href="#">机械键盘</a>
+							<a href="#">xbox</a>
+							<a href="#">游戏手柄</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">硬件存储</span>
+						<span class="detailsLinks">
+							<a href="#">显示器</a>
+							<a href="#">机械键盘</a>
+							<a href="#">固态硬盘</a>
+							<a href="#">u</a>
+							<a href="#">显卡</a>
+							<a href="#">主板</a>
+							<a href="#">高速U盘</a>
+							<a href="#">路由器</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">摄影摄像</span>
+						<span class="detailsLinks">
+							<a href="#">相机</a>
+							<a href="#">单反</a>
+							<a href="#">单电微单</a>
+							<a href="#">摄像机</a>
+							<a href="#">自拍神器</a>
+							<a href="#">拍立得</a>
+							<a href="#">镜头</a>
+							<a href="#">自拍杆</a>
+						</span>
+					</div>
+					
+					<div style="color: red; text-align: center;">第6页</div>
+				</div>
+				
+				<div class="categoryDetails" tid="7" style="display: none;">
+					<div>
+						<span class="detailsTitle">热门手机</span>
+						<span class="detailsLinks">
+							<a href="#">小米</a>
+							<a href="#">iPhone</a>
+							<a href="#">魅族</a>
+							<a href="#">荣耀</a>
+							<a href="#">乐视</a>
+							<a href="#">oppo</a>
+							<a href="#">vivo</a>
+							<a href="#">三星</a>
+							<a href="#">华为</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">特色手机</span>
+						<span class="detailsLinks">
+							<a href="#">yunos</a>
+							<a href="#">千元指纹</a>
+							<a href="#">双卡双待</a>
+							<a href="#">大屏</a>
+							<a href="#">自拍</a>
+							<a href="#">移动</a>
+							<a href="#">联通</a>
+							<a href="#">电信</a>
+							<a href="#">合约机</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">电脑整机</span>
+						<span class="detailsLinks">
+							<a href="#">笔记本</a>
+							<a href="#">平板电脑</a>
+							<a href="#">台式机</a>
+							<a href="#">一体机</a>
+							<a href="#">diy</a>
+							<a href="#">游戏本</a>
+							<a href="#">ipad</a>
+							<a href="#">Surface</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">智能数码</span>
+						<span class="detailsLinks">
+							<a href="#">智能设备</a>
+							<a href="#">智能手表</a>
+							<a href="#">智能手环</a>
+							<a href="#">VR眼镜</a>
+							<a href="#">智能摄像</a>
+							<a href="#">智能健康</a>
+							<a href="#">智能机器人</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">游戏组装</span>
+						<span class="detailsLinks">
+							<a href="#">DIY电脑</a>
+							<a href="#">竞技DIY</a>
+							<a href="#">显示器</a>
+							<a href="#">游戏本</a>
+							<a href="#">机械键盘</a>
+							<a href="#">xbox</a>
+							<a href="#">游戏手柄</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">硬件存储</span>
+						<span class="detailsLinks">
+							<a href="#">显示器</a>
+							<a href="#">机械键盘</a>
+							<a href="#">固态硬盘</a>
+							<a href="#">u</a>
+							<a href="#">显卡</a>
+							<a href="#">主板</a>
+							<a href="#">高速U盘</a>
+							<a href="#">路由器</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">摄影摄像</span>
+						<span class="detailsLinks">
+							<a href="#">相机</a>
+							<a href="#">单反</a>
+							<a href="#">单电微单</a>
+							<a href="#">摄像机</a>
+							<a href="#">自拍神器</a>
+							<a href="#">拍立得</a>
+							<a href="#">镜头</a>
+							<a href="#">自拍杆</a>
+						</span>
+					</div>
+					
+					<div style="color: red; text-align: center;">第7页</div>
+				</div>
+				
+				<div class="categoryDetails" tid="8" style="display: none;">
+					<div>
+						<span class="detailsTitle">热门手机</span>
+						<span class="detailsLinks">
+							<a href="#">小米</a>
+							<a href="#">iPhone</a>
+							<a href="#">魅族</a>
+							<a href="#">荣耀</a>
+							<a href="#">乐视</a>
+							<a href="#">oppo</a>
+							<a href="#">vivo</a>
+							<a href="#">三星</a>
+							<a href="#">华为</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">特色手机</span>
+						<span class="detailsLinks">
+							<a href="#">yunos</a>
+							<a href="#">千元指纹</a>
+							<a href="#">双卡双待</a>
+							<a href="#">大屏</a>
+							<a href="#">自拍</a>
+							<a href="#">移动</a>
+							<a href="#">联通</a>
+							<a href="#">电信</a>
+							<a href="#">合约机</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">电脑整机</span>
+						<span class="detailsLinks">
+							<a href="#">笔记本</a>
+							<a href="#">平板电脑</a>
+							<a href="#">台式机</a>
+							<a href="#">一体机</a>
+							<a href="#">diy</a>
+							<a href="#">游戏本</a>
+							<a href="#">ipad</a>
+							<a href="#">Surface</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">智能数码</span>
+						<span class="detailsLinks">
+							<a href="#">智能设备</a>
+							<a href="#">智能手表</a>
+							<a href="#">智能手环</a>
+							<a href="#">VR眼镜</a>
+							<a href="#">智能摄像</a>
+							<a href="#">智能健康</a>
+							<a href="#">智能机器人</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">游戏组装</span>
+						<span class="detailsLinks">
+							<a href="#">DIY电脑</a>
+							<a href="#">竞技DIY</a>
+							<a href="#">显示器</a>
+							<a href="#">游戏本</a>
+							<a href="#">机械键盘</a>
+							<a href="#">xbox</a>
+							<a href="#">游戏手柄</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">硬件存储</span>
+						<span class="detailsLinks">
+							<a href="#">显示器</a>
+							<a href="#">机械键盘</a>
+							<a href="#">固态硬盘</a>
+							<a href="#">u</a>
+							<a href="#">显卡</a>
+							<a href="#">主板</a>
+							<a href="#">高速U盘</a>
+							<a href="#">路由器</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">摄影摄像</span>
+						<span class="detailsLinks">
+							<a href="#">相机</a>
+							<a href="#">单反</a>
+							<a href="#">单电微单</a>
+							<a href="#">摄像机</a>
+							<a href="#">自拍神器</a>
+							<a href="#">拍立得</a>
+							<a href="#">镜头</a>
+							<a href="#">自拍杆</a>
+						</span>
+					</div>
+					
+					<div style="color: red; text-align: center;">第8页</div>
+				</div>
+				
+				<div class="categoryDetails" tid="9" style="display: none;">
+					<div>
+						<span class="detailsTitle">热门手机</span>
+						<span class="detailsLinks">
+							<a href="#">小米</a>
+							<a href="#">iPhone</a>
+							<a href="#">魅族</a>
+							<a href="#">荣耀</a>
+							<a href="#">乐视</a>
+							<a href="#">oppo</a>
+							<a href="#">vivo</a>
+							<a href="#">三星</a>
+							<a href="#">华为</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">特色手机</span>
+						<span class="detailsLinks">
+							<a href="#">yunos</a>
+							<a href="#">千元指纹</a>
+							<a href="#">双卡双待</a>
+							<a href="#">大屏</a>
+							<a href="#">自拍</a>
+							<a href="#">移动</a>
+							<a href="#">联通</a>
+							<a href="#">电信</a>
+							<a href="#">合约机</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">电脑整机</span>
+						<span class="detailsLinks">
+							<a href="#">笔记本</a>
+							<a href="#">平板电脑</a>
+							<a href="#">台式机</a>
+							<a href="#">一体机</a>
+							<a href="#">diy</a>
+							<a href="#">游戏本</a>
+							<a href="#">ipad</a>
+							<a href="#">Surface</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">智能数码</span>
+						<span class="detailsLinks">
+							<a href="#">智能设备</a>
+							<a href="#">智能手表</a>
+							<a href="#">智能手环</a>
+							<a href="#">VR眼镜</a>
+							<a href="#">智能摄像</a>
+							<a href="#">智能健康</a>
+							<a href="#">智能机器人</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">游戏组装</span>
+						<span class="detailsLinks">
+							<a href="#">DIY电脑</a>
+							<a href="#">竞技DIY</a>
+							<a href="#">显示器</a>
+							<a href="#">游戏本</a>
+							<a href="#">机械键盘</a>
+							<a href="#">xbox</a>
+							<a href="#">游戏手柄</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">硬件存储</span>
+						<span class="detailsLinks">
+							<a href="#">显示器</a>
+							<a href="#">机械键盘</a>
+							<a href="#">固态硬盘</a>
+							<a href="#">u</a>
+							<a href="#">显卡</a>
+							<a href="#">主板</a>
+							<a href="#">高速U盘</a>
+							<a href="#">路由器</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">摄影摄像</span>
+						<span class="detailsLinks">
+							<a href="#">相机</a>
+							<a href="#">单反</a>
+							<a href="#">单电微单</a>
+							<a href="#">摄像机</a>
+							<a href="#">自拍神器</a>
+							<a href="#">拍立得</a>
+							<a href="#">镜头</a>
+							<a href="#">自拍杆</a>
+						</span>
+					</div>
+					
+					<div style="color: red; text-align: center;">第9页</div>
+				</div>
+				
+				<div class="categoryDetails" tid="10" style="display: none;">
+					<div>
+						<span class="detailsTitle">热门手机</span>
+						<span class="detailsLinks">
+							<a href="#">小米</a>
+							<a href="#">iPhone</a>
+							<a href="#">魅族</a>
+							<a href="#">荣耀</a>
+							<a href="#">乐视</a>
+							<a href="#">oppo</a>
+							<a href="#">vivo</a>
+							<a href="#">三星</a>
+							<a href="#">华为</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">特色手机</span>
+						<span class="detailsLinks">
+							<a href="#">yunos</a>
+							<a href="#">千元指纹</a>
+							<a href="#">双卡双待</a>
+							<a href="#">大屏</a>
+							<a href="#">自拍</a>
+							<a href="#">移动</a>
+							<a href="#">联通</a>
+							<a href="#">电信</a>
+							<a href="#">合约机</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">电脑整机</span>
+						<span class="detailsLinks">
+							<a href="#">笔记本</a>
+							<a href="#">平板电脑</a>
+							<a href="#">台式机</a>
+							<a href="#">一体机</a>
+							<a href="#">diy</a>
+							<a href="#">游戏本</a>
+							<a href="#">ipad</a>
+							<a href="#">Surface</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">智能数码</span>
+						<span class="detailsLinks">
+							<a href="#">智能设备</a>
+							<a href="#">智能手表</a>
+							<a href="#">智能手环</a>
+							<a href="#">VR眼镜</a>
+							<a href="#">智能摄像</a>
+							<a href="#">智能健康</a>
+							<a href="#">智能机器人</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">游戏组装</span>
+						<span class="detailsLinks">
+							<a href="#">DIY电脑</a>
+							<a href="#">竞技DIY</a>
+							<a href="#">显示器</a>
+							<a href="#">游戏本</a>
+							<a href="#">机械键盘</a>
+							<a href="#">xbox</a>
+							<a href="#">游戏手柄</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">硬件存储</span>
+						<span class="detailsLinks">
+							<a href="#">显示器</a>
+							<a href="#">机械键盘</a>
+							<a href="#">固态硬盘</a>
+							<a href="#">u</a>
+							<a href="#">显卡</a>
+							<a href="#">主板</a>
+							<a href="#">高速U盘</a>
+							<a href="#">路由器</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">摄影摄像</span>
+						<span class="detailsLinks">
+							<a href="#">相机</a>
+							<a href="#">单反</a>
+							<a href="#">单电微单</a>
+							<a href="#">摄像机</a>
+							<a href="#">自拍神器</a>
+							<a href="#">拍立得</a>
+							<a href="#">镜头</a>
+							<a href="#">自拍杆</a>
+						</span>
+					</div>
+					
+					<div style="color: red; text-align: center;">第10页</div>
+				</div>
+				
+				<div class="categoryDetails" tid="11" style="display: none;">
+					<div>
+						<span class="detailsTitle">热门手机</span>
+						<span class="detailsLinks">
+							<a href="#">小米</a>
+							<a href="#">iPhone</a>
+							<a href="#">魅族</a>
+							<a href="#">荣耀</a>
+							<a href="#">乐视</a>
+							<a href="#">oppo</a>
+							<a href="#">vivo</a>
+							<a href="#">三星</a>
+							<a href="#">华为</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">特色手机</span>
+						<span class="detailsLinks">
+							<a href="#">yunos</a>
+							<a href="#">千元指纹</a>
+							<a href="#">双卡双待</a>
+							<a href="#">大屏</a>
+							<a href="#">自拍</a>
+							<a href="#">移动</a>
+							<a href="#">联通</a>
+							<a href="#">电信</a>
+							<a href="#">合约机</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">电脑整机</span>
+						<span class="detailsLinks">
+							<a href="#">笔记本</a>
+							<a href="#">平板电脑</a>
+							<a href="#">台式机</a>
+							<a href="#">一体机</a>
+							<a href="#">diy</a>
+							<a href="#">游戏本</a>
+							<a href="#">ipad</a>
+							<a href="#">Surface</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">智能数码</span>
+						<span class="detailsLinks">
+							<a href="#">智能设备</a>
+							<a href="#">智能手表</a>
+							<a href="#">智能手环</a>
+							<a href="#">VR眼镜</a>
+							<a href="#">智能摄像</a>
+							<a href="#">智能健康</a>
+							<a href="#">智能机器人</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">游戏组装</span>
+						<span class="detailsLinks">
+							<a href="#">DIY电脑</a>
+							<a href="#">竞技DIY</a>
+							<a href="#">显示器</a>
+							<a href="#">游戏本</a>
+							<a href="#">机械键盘</a>
+							<a href="#">xbox</a>
+							<a href="#">游戏手柄</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">硬件存储</span>
+						<span class="detailsLinks">
+							<a href="#">显示器</a>
+							<a href="#">机械键盘</a>
+							<a href="#">固态硬盘</a>
+							<a href="#">u</a>
+							<a href="#">显卡</a>
+							<a href="#">主板</a>
+							<a href="#">高速U盘</a>
+							<a href="#">路由器</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">摄影摄像</span>
+						<span class="detailsLinks">
+							<a href="#">相机</a>
+							<a href="#">单反</a>
+							<a href="#">单电微单</a>
+							<a href="#">摄像机</a>
+							<a href="#">自拍神器</a>
+							<a href="#">拍立得</a>
+							<a href="#">镜头</a>
+							<a href="#">自拍杆</a>
+						</span>
+					</div>
+					
+					<div style="color: red; text-align: center;">第11页</div>
+				</div>
+				
+				<div class="categoryDetails" tid="12" style="display: none;">
+					<div>
+						<span class="detailsTitle">热门手机</span>
+						<span class="detailsLinks">
+							<a href="#">小米</a>
+							<a href="#">iPhone</a>
+							<a href="#">魅族</a>
+							<a href="#">荣耀</a>
+							<a href="#">乐视</a>
+							<a href="#">oppo</a>
+							<a href="#">vivo</a>
+							<a href="#">三星</a>
+							<a href="#">华为</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">特色手机</span>
+						<span class="detailsLinks">
+							<a href="#">yunos</a>
+							<a href="#">千元指纹</a>
+							<a href="#">双卡双待</a>
+							<a href="#">大屏</a>
+							<a href="#">自拍</a>
+							<a href="#">移动</a>
+							<a href="#">联通</a>
+							<a href="#">电信</a>
+							<a href="#">合约机</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">电脑整机</span>
+						<span class="detailsLinks">
+							<a href="#">笔记本</a>
+							<a href="#">平板电脑</a>
+							<a href="#">台式机</a>
+							<a href="#">一体机</a>
+							<a href="#">diy</a>
+							<a href="#">游戏本</a>
+							<a href="#">ipad</a>
+							<a href="#">Surface</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">智能数码</span>
+						<span class="detailsLinks">
+							<a href="#">智能设备</a>
+							<a href="#">智能手表</a>
+							<a href="#">智能手环</a>
+							<a href="#">VR眼镜</a>
+							<a href="#">智能摄像</a>
+							<a href="#">智能健康</a>
+							<a href="#">智能机器人</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">游戏组装</span>
+						<span class="detailsLinks">
+							<a href="#">DIY电脑</a>
+							<a href="#">竞技DIY</a>
+							<a href="#">显示器</a>
+							<a href="#">游戏本</a>
+							<a href="#">机械键盘</a>
+							<a href="#">xbox</a>
+							<a href="#">游戏手柄</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">硬件存储</span>
+						<span class="detailsLinks">
+							<a href="#">显示器</a>
+							<a href="#">机械键盘</a>
+							<a href="#">固态硬盘</a>
+							<a href="#">u</a>
+							<a href="#">显卡</a>
+							<a href="#">主板</a>
+							<a href="#">高速U盘</a>
+							<a href="#">路由器</a>
+						</span>
+					</div>
+					<div>
+						<span class="detailsTitle">摄影摄像</span>
+						<span class="detailsLinks">
+							<a href="#">相机</a>
+							<a href="#">单反</a>
+							<a href="#">单电微单</a>
+							<a href="#">摄像机</a>
+							<a href="#">自拍神器</a>
+							<a href="#">拍立得</a>
+							<a href="#">镜头</a>
+							<a href="#">自拍杆</a>
+						</span>
+					</div>
+					
+					<div style="color: red; text-align: center;">第12页</div>
+				</div>
+				
+				<!--轮播DIV-->
+				<div class="carouselImg">
+					<img src="../img/tmallAdv1.jpg" id="img1" />
+				</div>
+			</div>	
+		</div>
+		
+		<div class="productsBg">
+			<!--首页商品推荐列表DIV-->
+			<div class="tmProducts">
+				<div class="eachProductsTitle">
+					<span class="greenSquare"></span>
+					<h2>户外出行 </h2>
+					<h3>OUTDOORS & AUTOMOTIVE</h3>
+					<div class="pullRight">
+						<a href="#">皮肤衣</a>
+						<a href="#">运动鞋</a>
+						<a href="#">4s保养</a>
+						<a href="#">行车记录仪</a>
+						<a href="#">轮胎</a>
+					</div>
+				</div>
+				
+				<div class="standImg imgDistance">
+					<a href="#nowhere"><img src="../img/standAdv1.jpg" /></a>
+				</div>
+				<div class="products">
+					<a href="../otherParts/productsPage.html">
+						<span class="productsImg imgDistance">
+							<img src="../img/razerImg/razer03.jpg" />
+							<p>Razer雷蛇炼狱蝰蛇CF/LOL/H1Z1守望先锋绝地求生电竞有线游戏鼠标</p>
+							<h2>￥149</h2>
+						</span>
+					</a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/products02.jpg" />
+						<p>李宁 男式 韦德之道WOW2低帮305篮球鞋</p>
+						<h2>￥399</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/products03.jpg" />
+						<p>来自荷兰的袋鼠车 亲子自行车 </p>
+						<h2>￥22999</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/products04.jpg" />
+						<p>星特朗超广角66度UW15mm高倍目镜</p>
+						<h2>￥135</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/products05.jpg" />
+						<p>2017秋季户外长袖情侣款速干T恤 时尚拼接款潮人运动快干上衣</p>
+						<h2>￥71</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/products06.jpg" />
+						<p>德国DEUTER多特 Escape I 运动休闲 单肩挎包 单肩背包 39110</p>
+						<h2>￥134.9</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/products07.jpg" />
+						<p>稻草人户外 秋冬男女软壳冲锋衣透气防风</p>
+						<h2>￥139.8</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/products08.jpg" />
+						<p>龙牙男子飞鹰体训鞋（升级版）透气耐磨运动跑鞋</p>
+						<h2>￥699</h2>
+					</span></a>
+				</div>
+			</div>
+			
+			<!--猜你喜欢DIV-->
+			<div class="tmProducts">
+				<div class="eachProductsTitle">
+					<span id="youlike">猜你喜欢</span>
+				</div>
+				
+				<div class="products">
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/猜你喜欢/recommend1.png" />
+						<p>【抢券减200】Apple/苹果iPhone X 全网通4G智能手机苹果10 苹果X</p>
+						<h2>￥8388.0</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/猜你喜欢/recommend2.jpg" />
+						<p>到手价2258起 2017新款iPad 9.7英寸苹果平板 32G/128G WiFi版 </p>
+						<h2>￥2318.0</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/猜你喜欢/recommend3.png" />
+						<p>科沃斯地宝DD35扫地机器人吸尘器智能家用超薄全自动洗擦地机拖地 </p>
+						<h2>￥1759.0</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/猜你喜欢/recommend4.jpg" />
+						<p>Xiaomi/小米 小米电视4A 55英寸 4k超高清智能wifi网络液晶电视机 </p>
+						<h2>￥2699.0</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/猜你喜欢/recommend5.png" />
+						<p>小米 米家空气净化器2除甲醛雾霾粉尘卧室家用智能氧吧 </p>
+						<h2>￥549.0</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/猜你喜欢/recommend6.jpg" />
+						<p>Haier/海尔 EG10014B39GU1 10公斤kg智能变频滚筒全自动洗衣机 </p>
+						<h2>￥2699.0</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/猜你喜欢/recommend7.png" />
+						<p>【三只松鼠_夏威夷果265gx2袋】零食坚果干果奶油味送开口器</p>
+						<h2>￥46.9</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/猜你喜欢/recommend8.png" />
+						<p>三只松鼠 坚果大礼包1430g年货礼盒零食小吃每日坚果组合7袋批发 </p>
+						<h2>￥98.0</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/猜你喜欢/recommend9.png" />
+						<p>【三只松鼠开口松子218gx2】休闲零食坚果炒货东北手剥红松 </p>
+						<h2>￥44.9</h2>
+					</span></a>
+					<a href="#"><span class="productsImg imgDistance">
+						<img src="../img/猜你喜欢/recommend10.png" />
+						<p>【年货节】兰蔻清滢柔肤水400ml 粉水补水滋润保湿水爽肤水化妆水 </p>
+						<h2>￥420.0</h2>
+					</span></a>
+				</div>
+			</div>
+		</div>
+		
+		<iframe src="../sharedParts/bottomPart.html" frameborder="no" width="100%" height="535px"></iframe>
+		
+	</body>
+	
+	<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+	<script>
+		var timer;
+		
+		var i = 1;
+		
+		function showCategoryDetails(tid){
+			$("div.categoryDetails[tid="+tid+"]").show();
+		}
+		
+		function hideCategoryDetails(tid){
+			$("div.categoryDetails[tid="+tid+"]").hide();
+		}
+		
+		function changeImg(){
+			if(i == 4){
+				i = 1;
+			}else{
+				i++;
+			}
+			$("#img1").attr("src", "../img/tmallAdv" + i + ".jpg");
+			$("#img1").fadeIn(1000);
+			$("#img1").fadeOut(1000);
+			/*$("div.carouselImg img").src = "../img/tmallAdv" + i + ".jpg";*/
+		}
+			
+		$(function(){
+			$("div.TmCategory a").mouseenter(function(){
+				var tid = $(this).attr("tid");
+				showCategoryDetails(tid);
+			});
+			
+			$("div.TmCategory a").mouseleave(function(){
+				var tid = $(this).attr("tid");
+				hideCategoryDetails(tid);
+			});
+			
+			$("div.categoryDetails").mouseenter(function(){
+				var tid = $(this).attr("tid");
+				showCategoryDetails(tid);
+			});
+			
+			$("div.categoryDetails").mouseleave(function(){
+				var tid = $(this).attr("tid");
+				hideCategoryDetails(tid);
+			});
+			timer = setInterval("changeImg()", 2000);
+		});
+	</script>
+</html>

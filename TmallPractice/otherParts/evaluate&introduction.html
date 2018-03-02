@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+		<style>
+			.testSolid{
+				border: 1px solid red;
+			}
+			
+			body{
+				margin: 0;
+				padding: 0;
+				font-size: 12px;
+				font-family: arial;
+			}
+			
+			div.page{
+				max-width: 1366px;
+				margin: 0 auto;
+			}
+			
+			div.eiContents{
+				width: 1013px;
+				margin: 0 auto;
+			}
+			
+			div.itemSel{
+				border: 1px solid #DFDFDF;
+			}
+			
+			div.itemSel a{
+				line-height: 40px;
+				text-decoration: none;
+				text-align: center;
+			}
+			
+			a.productcss{
+				border-left: 1px solid #cfbfb1;
+				border-right: 1px solid #cfbfb1;
+				display: inline-block;
+				width: 90px;
+				line-height: 46px;
+				color: black;
+			}
+			
+			a.selected{
+				position: relative;
+				font-weight: bold;
+				color: red;
+			}
+			
+			a.selected:before{
+				position: absolute;
+				content: "";
+				border: 1px solid red;
+				background-color: red;
+				width: 90px;
+				left: -1px;
+				height: 0;
+			}
+			
+			a.selected:after{
+				position: absolute;
+				content: "";
+				border: 5px solid;
+				border-color: red transparent transparent;
+				margin-left: -30px;
+			}
+			
+			a.selectedeval{
+				position: relative;
+				font-weight: bold;
+				color: red;
+			}
+			
+			a.selectedeval span{
+				color: red;
+			}
+			
+			a.selectedeval:before{
+				position: absolute;
+				content: "";
+				border: 1px solid red;
+				background-color: red;
+				width: 107px;
+				left: -4px;
+				height: 0;
+			}
+			
+			a.selectedeval:after{
+				position: absolute;
+				content: "";
+				border: 5px solid;
+				border-color: red transparent transparent;
+				margin-left: -55px;
+			}
+			
+			a.evaluateLink span{
+				border-right: 1px dotted #D2D2D2;
+				color: #3355b9; 
+				padding-right: 20px;
+			}
+			
+			a.evaluateLink{
+				padding-left: 20px;
+				color: #333;
+				line-height: 46px;
+			}
+			
+			a.evaluateLinkclick span{
+				padding-right: 20px;
+			}
+			
+			a.evaluateLinkclick{
+				display: inline-block;
+				padding-left: 20px;
+				line-height: 46px;
+				border-right: 1px solid #cfbfb1;
+			}
+			
+			div.introduction{
+				border: 1px solid #DFDFDF;
+				padding: 40px 40px 20px 40px;
+			}
+			
+			div.introduction *{
+				color: #999;
+			}
+			
+			div.introduction span{
+				display: block;
+				float: left;
+				width: 240px;
+				margin: 5px 0;
+			}
+			
+			div.introduction h5{
+				font-size: 12px;
+				margin-bottom: 10px;
+			}
+			
+			.clearfix:after{
+				content: ".";
+				display: block;
+				height: 0;
+				visibility: hidden;
+				clear: both;
+			}
+			
+			div.imgPart{
+				border: 1px solid #DFDFDF;
+				margin: 20px 0;
+			}
+			
+			div.imgPart img{
+				width: 100%;
+			}
+			
+			.pullLeft{
+				float: left;
+				display: inline-block;
+			}
+			
+			div.evaluateItem{
+				position: relative;
+				margin: 5px;
+				border-bottom: 1px solid #e3e3e3;
+				padding: 8px 0;
+			}
+			
+			div.evaluateDiv{
+				width: 1013px;
+				margin: 40px auto;
+			}
+			
+			div.evalcontent{
+				width: 60%;
+				padding: 0 10px;
+			}
+			
+			div.productVresion{
+				position: absolute;
+				width: 15%;
+				padding: 0 10px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			
+			div.productVresion span{
+				color: #A4A4A4;
+			}
+			
+			div.buyer{
+				position: absolute;
+				width: 15%;
+				padding: 0 10px;
+				right: 30px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			
+			div.evaluateImg{
+				margin: 8px 0;
+			}
+			
+			div.evaluateImg span{
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				border: 2px solid #DFDFDF;
+			}
+			
+			div.evaluateImg img{
+				width: 100%;
+				height: 100%;
+			}
+			
+			.evaluateDate{
+				color: #C9C9C9;
+				padding: 5px 0 0 0;
+			}
+			
+			div.evaluateFirst{
+				width: 120px;
+			}
+			
+			div.evaluateFirst span{
+				display: block;
+			}
+			
+			div.evaluateFirst span:first-child{
+				color: #A4A4A4;
+			}
+			
+			div.afterEval{
+				clear: both;
+			}
+			
+			div.afterEval span:first-child{
+				display: inline-block;
+				width: 120px;
+				color: #A4A4A4;
+			}
+			
+			div.superVip{
+				color: goldenrod;
+			}
+			
+			iframe{
+				margin-top: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<!--整个页面DIV-->
+		<div class="page">
+			<!--内容部分DIV-->
+			<div class="eiContents">
+				<!--item选项（商品详情、评价）DIV-->
+				<div class="itemSel clickproduct">
+					<a href="#no" class="selected productcss">商品详情</a>
+					<a href="#no" class="evaluateLink clickthis">累计评价 <span>68</span></a>
+				</div>
+				
+				<div class="itemSel clickeval" style="display: none;">
+					<a href="#" class="productcss">商品详情</a>
+					<a href="#" class="evaluateLinkclick selectedeval clickthis">累计评价 <span>68</span></a>
+				</div>
+				
+				
+				<div class="introduction clearfix">
+					<h5>产品参数:</h5>
+					<span>产品名称：Razer/雷蛇 炼狱蝰蛇 </span>
+	                <span>保修期: 24个月</span>
+	                <span>包装体积: 15*4*10cm</span>
+	                <span>品牌: Razer/雷蛇</span>
+	                <span>型号: 炼狱蝰蛇 </span>
+	                <span>套餐类型: 官方标配 </span>
+	                <span>毛重: 500克 </span>
+	                <span>生产企业: 雷蛇 </span>
+	                <span>工作方式: 激光</span>
+	                <span>接口类型: USB </span>
+	                <span>光学分辨率: 3500dpi</span>
+	                <span>售后服务: 全国联保</span>
+				</div>
+				
+				
+				
+				<div class="imgPart">
+					<img src="../img/razerImg/razer01.jpg" />
+					<img src="../img/razerImg/razer02.jpg" />
+					<img src="../img/razerImg/razer03.jpg" />
+					<img src="../img/razerImg/razer04.jpg" />
+					<img src="../img/razerImg/razer05.jpg" />
+				</div>
+				
+				<!--评价部分DIV-->
+				<div class="evaluateDiv">
+					<div class="evaluateItem clearfix">
+						<div class="evalcontent pullLeft">
+							<div>
+								资深游戏宅，最近喜欢玩fps，正好鼠标滚轮摔坏了，比的很多才到这家，到手后挺喜欢的，新的，大小合适，抓握舒服，
+								用来好几天才来评价，没出现问题，2000dpi我玩吃鸡感觉刚好，5星，我会过一段时间追评的！
+							</div>
+							<div class="evaluateDate">01.30</div>
+						</div>
+						<div class="productVresion pullLeft">
+							<div>套餐类型：<span>官方标配</span></div>
+							<div>颜色分类：<span>2000DPI黑色版</span></div>
+						</div>
+						<div class="buyer pullLeft">3***助<span>（匿名）</span></div>
+					</div>
+					
+					<div class="evaluateItem clearfix">
+						<div class="evalcontent pullLeft">
+							<div>
+								超级好用。在他家买了好多东西超级好用。在他家买了好多东西超级好用。在他家买了好多东西超级好用。
+								在他家买了好多东西超级好用。在他家买了好多东西超级好用。在他家买了好多东西
+							</div>
+							<div class="evaluateDate">今天</div>
+						</div>
+						<div class="productVresion pullLeft">
+							<div>套餐类型：<span>官方标配</span></div>
+							<div>颜色分类：<span>《守望先锋》精英版</span></div>
+						</div>
+						<div class="buyer pullLeft">陈***寒<span>（匿名）</span></div>
+					</div>
+					
+					
+					<div class="evaluateItem clearfix">
+						<div class="evalcontent pullLeft">
+							<div>
+								送给男孩子的生日礼物！适合男孩用哦。鼠标比较大！磨砂面用起来手感不错。之前就用过这款。正品 ，好评！
+							</div>
+							<div class="evaluateImg"><span><img src="../img/评价01.jpg"/></span></div>
+							<div class="evaluateDate">01.30</div>
+						</div>
+						<div class="productVresion pullLeft">
+							<div>套餐类型：<span>官方标配</span></div>
+							<div>颜色分类：<span>黑色</span></div>
+						</div>
+						<div class="buyer pullLeft">
+							<div>z***4<span>（匿名）</span></div>
+							<div class="superVip">超级会员</div>
+						</div>
+					</div>
+					
+					<div class="evaluateItem clearfix">
+						<div class="evalcontent pullLeft">
+							<div>
+								很棒，有宏有dpi设置，和灯光设置，其实再加个侧键就完美了，开个玩笑。用着手感很好，我手大，适合手大的人用，舒服。
+							</div>
+							<div class="evaluateImg">
+								<span><img src="../img/评价03.01.jpg"/></span>
+								<span><img src="../img/评价03.02.jpg"/></span>
+							</div>
+							<div class="evaluateDate">01.27</div>
+						</div>
+						<div class="productVresion pullLeft">
+							<div>套餐类型：<span>官方标配</span></div>
+							<div>颜色分类：<span>炼狱蝰蛇三色灯光版</span></div>
+						</div>
+						<div class="buyer pullLeft">
+							<div>我***6<span>（匿名）</span></div>
+						</div>
+					</div>
+					
+					<div class="evaluateItem clearfix">
+						<div>
+							<div class="evalcontent pullLeft">
+								<div>
+									<div class="evaluateFirst pullLeft">
+										<span>初次评价:</span>
+										<span class="evaluateDate">01.30</span>
+									</div>
+									<div class="pullLeft">
+										<div>手感不错！</div>
+										<div class="evaluateImg"><span><img src="../img/评价02.jpg"/></span></div>
+									</div>
+								</div>
+								
+								<div class="afterEval">
+									<div><span>收货3天后追加:</span><span>是正品！</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="productVresion pullLeft">
+							<div>套餐类型：<span>官方标配</span></div>
+							<div>颜色分类：<span>黑色</span></div>
+						</div>
+						<div class="buyer pullLeft">
+							<div>b***o<span>（匿名）</span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<iframe src="../sharedParts/bottomPart.html" frameborder="no" width="100%" height="535px"></iframe>
+		
+		<script>
+			
+			
+			$(function(){
+				$("a.productcss").click(function(){
+					$("div.clickproduct").show();
+					$("div.clickeval").hide();
+					$("div.evaluateDiv").show();
+					$("div.introduction").show();
+					$("div.imgPart").show();
+					$("div.clickproduct").show();
+				});
+				
+				$("a.clickthis").click(function(){
+					$("div.introduction").hide();
+					$("div.imgPart").hide();
+					$("div.clickproduct").hide();
+					$("div.clickeval").show();
+					$("div.evaluateDiv").show();
+				});
+			});
+		</script>
+	</body>
+</html>

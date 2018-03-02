@@ -1,0 +1,27 @@
+div.topPart{
+	min-width: 1366px;
+	padding-left: 30px;
+	background-color: #f2f2f2;
+	padding: 8px 0;
+	text-align: center;
+	border-bottom: 1px solid #e7e7e7;
+}
+
+div.topPart img{
+	width: 12px;
+	height: 12px;
+}
+
+div.topPart span,div.topPart a{
+	color: #999;
+	padding: 0 10px;
+	text-decoration: none;
+}
+
+div.topPart a:hover{
+	color: red;
+}
+
+a.hasDecor:hover{
+	text-decoration: underline;
+}

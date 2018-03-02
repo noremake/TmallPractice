@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Razer雷蛇炼狱蝰蛇CF/LOL/H1Z1守望先锋绝地求生电竞有线游戏鼠标</title>
+		<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+		<style>
+			body{
+				margin: 0;
+				padding: 0;
+				font-size: 12px;
+				font-family: arial;
+			}
+			
+			div.backgroundPage{
+				max-width: 1366px;
+				margin: 0 auto 100px auto;
+			}
+			
+			/*使外部容器包含浮动DIV*/
+			.clearfix:after{
+				content: ".";
+				display: block;
+				clear: both;
+				height: 0;
+				visibility: hidden;
+			}
+			
+			img.mainPic{
+				width: 380px;
+				height: 380px;
+				border: 1px solid #eee;
+				padding: 10px;
+			}
+			div.thumbnail img{
+				width: 60px;
+				height: 60px;
+				border: 2px solid transparent;
+				margin: 6px;
+			}
+			
+			div.thumbnail{
+				margin: 10px auto;
+				width: 80%;
+				
+			}
+			
+			div.thumbnail img:hover{
+				border: 2px solid black;
+			}
+			
+			div.pictures{
+				width: 400px;
+				float: left;
+			}
+			
+			div.productDetails{
+				position: relative;
+				margin: 0 auto;
+				width: 1013px;
+			}
+			
+			.clearfix:after{
+				content: ".";
+				display: block;	
+				clear: both;
+				visibility: hidden;
+				height: 0;
+			}
+			
+			div.saleSelections{
+				position: absolute;
+				width: 580px;
+				left: 420px;
+			}
+			
+			h2{
+				margin-top: 0;
+				margin-left: 10px;
+				margin-bottom: 0;
+			}
+			
+			h2 a{
+				color: #000000;
+				text-decoration: none;
+			}
+			
+			h4{
+				margin-left: 10px;
+				font-weight: normal;
+				margin-top: 0;
+			}
+			
+			.redColor{
+				color: #C40000;
+			}
+			
+			.block{
+				display: inline-block;
+			}
+			
+			.block span{
+				display: block;
+				margin: 10px 0;
+			}
+			
+			span.priceNum{
+				margin-left: 20px;
+			}
+			
+			div.activityTitle{
+				background-color: #2DA77A;
+				color: white;
+				line-height: 40px;
+				text-align: center;
+			}
+			
+			.textThroughline{
+				text-decoration: line-through;
+			}
+			
+			.specialPrice{
+				font-weight: bold;	
+				font-size: 30px;
+			}
+			
+			div.normalPrice span,div.priceNum span{
+				display: inline-block;
+				width: 68px;
+			}
+			
+			div.price{
+				background: url(../img/priceBackground.png);
+				height: 52px;
+				padding: 10px;
+				color: #666666;
+			}
+			
+			div.salesandReview span{
+				display: inline-block;
+				width: 49%;
+				text-align: center;
+			}
+			
+			div.salesandReview{
+				color: #999;
+				margin: 20px 0;
+				border-top: 1px dotted #C9C9C9;
+				border-bottom: 1px dotted #C9C9C9;
+				padding: 10px 0;
+			}
+			
+			div.salesandReview span:first-child{
+				border-right: 1px solid #999;
+			}
+			
+			.inandDecrease{
+				display: inline-block;
+				width: 10px;
+				vertical-align: top;
+				width: 20px;
+			}
+			
+			.inandDecrease span#increase,
+			.inandDecrease span#decrease{
+				height: 10px;
+				width: 20px;
+				display: block;
+				border: 1px solid #999;
+				text-align: center;
+				padding-top: 4px;
+			}
+			
+			span#updownMiddle{
+				height: 4px;
+				display: block;
+			}
+			
+			.inandDecrease img{
+				display: inline-block;
+				vertical-align: top;
+			}
+			
+			div.chooseWhich{
+				color: #999;
+				margin-top: 50px;
+			}
+			
+			div.chooseWhich span.numberText{
+				height: 34px;
+				width: 40px;
+				display: inline-block;
+				border: 1px solid;
+			}
+			
+			div.chooseWhich input{
+				width: 90%;
+				height: 90%;
+				border-width: 0;
+				outline: none;
+			}
+			
+			div.buyButton button.buyNow{
+				border: 1px solid #c40000;
+				background-color: #ffeded;
+				text-align: center;
+				color: #c40000;
+				font-size: 16px;
+				line-height: 40px;
+			}
+			
+			div.buyButton button.addTobuy{
+				border: 1px solid #c40000;
+				background-color: #C40000;
+				text-align: center;
+				color: #fff;
+				font-size: 16px;
+				line-height: 40px;
+			}
+			
+			div.buyButton img{
+				margin-right: 8px;
+				vertical-align: middle;
+			}
+			
+			div.buyButton button{
+				display: inline-block;
+				width: 180px;
+				height: 40px;
+				margin: 0 10px;
+				outline: none;
+				cursor: pointer;
+			}
+			
+			div.buyButton{
+				margin-top: 20px;
+				text-align: center;
+			}
+			
+			.activityTitle span{
+				font-weight: bold;
+				font-size: 20px;
+			}
+			
+			.activityTitle b{
+				color: yellow;
+			}
+			
+			div.promise{
+				margin-top: 30px;
+			}
+			
+			div.promise a{
+				text-decoration: none;
+				color: #666666;
+				padding-right: 20px;
+			}
+			
+			div.promise span{
+				color: #999;
+				padding-right: 20px;
+			}
+			
+			span.whiteblock{
+				display: inline-block;
+				width: 68px;
+			}
+			
+			div.chooseImg{
+				color: #999;
+			}
+			
+			div.chooseImg span{
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				border: 2px solid #808080;
+				margin-left: 5px;
+				vertical-align: middle;
+				cursor: pointer;
+			}
+			
+			div.chooseImg span:hover{
+				border: 2px solid red;
+			}
+			
+			div.chooseImg img{
+				width: 100%;
+				height: 100%;
+			}
+			
+			.choose{
+				color: #999;
+				margin-top: 30px;
+			}
+			
+			span.defaultChoose span{
+				display: inline-block;
+				width: 50px;
+				height: 20px;
+				padding: 2px 8px;
+				cursor: pointer;
+			}
+			
+			span.defaultChoose{
+				display: inline-block;
+				border: 3px solid red;
+			}
+			
+			
+			
+			.testSolid{
+				border: 1px solid red;
+			}
+			
+			body{
+				margin: 0;
+				padding: 0;
+				font-size: 12px;
+				font-family: arial;
+			}
+			
+			div.page{
+				max-width: 1366px;
+				margin: 0 auto;
+			}
+			
+			div.eiContents{
+				width: 1013px;
+				margin: 0 auto;
+			}
+			
+			div.itemSel{
+				border: 1px solid #DFDFDF;
+			}
+			
+			div.itemSel a{
+				line-height: 40px;
+				text-decoration: none;
+				text-align: center;
+			}
+			
+			a.productcss{
+				border-left: 1px solid #cfbfb1;
+				border-right: 1px solid #cfbfb1;
+				display: inline-block;
+				width: 90px;
+				line-height: 46px;
+				color: black;
+			}
+			
+			a.selected{
+				position: relative;
+				font-weight: bold;
+				color: red;
+			}
+			
+			a.selected:before{
+				position: absolute;
+				content: "";
+				border: 1px solid red;
+				background-color: red;
+				width: 90px;
+				left: -1px;
+				height: 0;
+			}
+			
+			a.selected:after{
+				position: absolute;
+				content: "";
+				border: 5px solid;
+				border-color: red transparent transparent;
+				margin-left: -30px;
+			}
+			
+			a.selectedeval{
+				position: relative;
+				font-weight: bold;
+				color: red;
+			}
+			
+			a.selectedeval span{
+				color: red;
+			}
+			
+			a.selectedeval:before{
+				position: absolute;
+				content: "";
+				border: 1px solid red;
+				background-color: red;
+				width: 107px;
+				left: -4px;
+				height: 0;
+			}
+			
+			a.selectedeval:after{
+				position: absolute;
+				content: "";
+				border: 5px solid;
+				border-color: red transparent transparent;
+				margin-left: -55px;
+			}
+			
+			a.evaluateLink span{
+				border-right: 1px dotted #D2D2D2;
+				color: #3355b9; 
+				padding-right: 20px;
+			}
+			
+			a.evaluateLink{
+				padding-left: 20px;
+				color: #333;
+				line-height: 46px;
+			}
+			
+			a.evaluateLinkclick span{
+				padding-right: 20px;
+			}
+			
+			a.evaluateLinkclick{
+				display: inline-block;
+				padding-left: 20px;
+				line-height: 46px;
+				border-right: 1px solid #cfbfb1;
+			}
+			
+			div.introduction{
+				border: 1px solid #DFDFDF;
+				padding: 40px 40px 20px 40px;
+			}
+			
+			div.introduction *{
+				color: #999;
+			}
+			
+			div.introduction span{
+				display: block;
+				float: left;
+				width: 240px;
+				margin: 5px 0;
+			}
+			
+			div.introduction h5{
+				font-size: 12px;
+				margin-bottom: 10px;
+			}
+			
+			.clearfix:after{
+				content: ".";
+				display: block;
+				height: 0;
+				visibility: hidden;
+				clear: both;
+			}
+			
+			div.imgPart{
+				border: 1px solid #DFDFDF;
+				margin: 20px 0;
+			}
+			
+			div.imgPart img{
+				width: 100%;
+			}
+			
+			.pullLeft{
+				float: left;
+				display: inline-block;
+			}
+			
+			div.evaluateItem{
+				position: relative;
+				margin: 5px;
+				border-bottom: 1px solid #e3e3e3;
+				padding: 8px 0;
+			}
+			
+			div.evaluateDiv{
+				width: 1013px;
+				margin: 40px auto;
+			}
+			
+			div.evalcontent{
+				width: 60%;
+				padding: 0 10px;
+			}
+			
+			div.productVresion{
+				position: absolute;
+				width: 15%;
+				padding: 0 10px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			
+			div.productVresion span{
+				color: #A4A4A4;
+			}
+			
+			div.buyer{
+				position: absolute;
+				width: 15%;
+				padding: 0 10px;
+				right: 30px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			
+			div.evaluateImg{
+				margin: 8px 0;
+			}
+			
+			div.evaluateImg span{
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				border: 2px solid #DFDFDF;
+			}
+			
+			div.evaluateImg img{
+				width: 100%;
+				height: 100%;
+			}
+			
+			.evaluateDate{
+				color: #C9C9C9;
+				padding: 5px 0 0 0;
+			}
+			
+			div.evaluateFirst{
+				width: 120px;
+			}
+			
+			div.evaluateFirst span{
+				display: block;
+			}
+			
+			div.evaluateFirst span:first-child{
+				color: #A4A4A4;
+			}
+			
+			div.afterEval{
+				clear: both;
+			}
+			
+			div.afterEval span:first-child{
+				display: inline-block;
+				width: 120px;
+				color: #A4A4A4;
+			}
+			
+			div.superVip{
+				color: goldenrod;
+			}
+			
+			iframe{
+				margin-top: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<iframe scrolling="no"
+            frameborder="0" src="../sharedParts/topPart.html" 
+            style="width: 100%;height: 50px;padding: 0;margin: 0;"></iframe>
+            
+       <iframe scrolling="no"
+            frameborder="0" src="../sharedParts/simple_Serach.html" 
+            style="width: 100%;height: 100%;padding: 0;margin: 0;"></iframe>
+		
+		<div class="backgroundPage clearfix">
+			<!--商品购买部分DIV-->
+			<div class="productDetails clearfix">
+				<!--商品图片查看（小图+大图）DIV-->
+				<div class="pictures">
+					<img class="mainPic" src="../img/razerImg/razer02.jpg" />
+					<div class="thumbnail">
+						<img class="imageproducts" src="../img/razerImg/razer02.jpg" />
+						<img class="imageproducts" src="../img/razerImg/razer03.jpg" />
+						<img class="imageproducts" src="../img/razerImg/razer04.jpg" />
+						<img class="imageproducts" src="../img/razerImg/razer05.jpg" />
+					</div>
+				</div>
+				
+				<!--购买选项DIV-->
+				<div class="saleSelections">
+					<h2><a href="#nowhere">Razer雷蛇炼狱蝰蛇CF/LOL/H1Z1守望先锋绝地求生电竞有线游戏鼠标  </a></h2>
+					<h4 class="redColor">游戏推荐 电竞鼠标 舒适手感 全国联保  </h4>
+					<div>
+						<div class="activityTitle"><span>聚划算</span> 此商品即将参加聚划算，<b>2天12小时</b>后开始</div>
+						<div class="price">
+							<div class="normalPrice">
+								<span>价格</span>
+								<span class="textThroughline">￥229</span>
+							</div>
+							<div class="priceNum">
+								<span>促销价</span>
+								<span class="redColor specialPrice">￥149</span>
+							</div>
+						</div>
+						
+						<div class="salesandReview">
+							<span class="sales">销量 <b class="redColor">87</b></span>
+							<span>累计评价 <b class="redColor">68</b></span>
+						</div>
+						
+						<div class="chooseImg">
+							颜色分类&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;
+							<span><img src="../img/razerImg/razer02.jpg" /></span>
+							<span><img src="../img/razerImg/razer03.jpg" /></span>
+						</div>
+						
+						<div class="choose">
+							套餐类型&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;
+							<span class="defaultChoose"><span>官方标配</span></span>
+						</div>
+						
+						<div class="chooseWhich">
+							数量
+							<span class="whiteblock"></span>
+							<span class="numberText"><input  id="num" type="text" /></span>
+							<span class="inandDecrease">
+								<span id="increase"><img src="../img/increase.png" /></span>
+								<span id="updownMiddle"></span>
+								<span id="decrease"><img src="../img/decrease.png" /></span>
+							</span>
+							<span>件 库存66件 </span>
+						</div>
+						
+						<div class="buyButton">
+							<a href="../otherParts/shoppingTrolley.html">
+								<button class="buyNow">立即购买</button>
+							</a>
+							<a href="../otherParts/trolleyChoice.html">
+								<button class="addTobuy"><img src="../img/添加到购物车.png" />加入购物车</button>
+							</a>
+						</div>
+						
+						<div class="promise">
+							<span>服务承诺 </span> 
+							<a href="#nowhere">正品保证 </a> 
+							<a href="#nowhere">极速退款 </a> 
+							<a href="#nowhere">七天无理由退换</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--整个页面DIV-->
+		<div class="page">
+			<!--内容部分DIV-->
+			<div class="eiContents">
+				<!--item选项（商品详情、评价）DIV-->
+				<div class="itemSel clickproduct">
+					<a href="#no" class="selected productcss">商品详情</a>
+					<a href="#no" class="evaluateLink clickthis">累计评价 <span>68</span></a>
+				</div>
+				
+				<div class="itemSel clickeval" style="display: none;">
+					<a href="#no" class="productcss">商品详情</a>
+					<a href="#no" class="evaluateLinkclick selectedeval clickthis">累计评价 <span>68</span></a>
+				</div>
+				
+				
+				<div class="introduction clearfix">
+					<h5>产品参数:</h5>
+					<span>产品名称：Razer/雷蛇 炼狱蝰蛇 </span>
+	                <span>保修期: 24个月</span>
+	                <span>包装体积: 15*4*10cm</span>
+	                <span>品牌: Razer/雷蛇</span>
+	                <span>型号: 炼狱蝰蛇 </span>
+	                <span>套餐类型: 官方标配 </span>
+	                <span>毛重: 500克 </span>
+	                <span>生产企业: 雷蛇 </span>
+	                <span>工作方式: 激光</span>
+	                <span>接口类型: USB </span>
+	                <span>光学分辨率: 3500dpi</span>
+	                <span>售后服务: 全国联保</span>
+				</div>
+				
+				
+				
+				<div class="imgPart">
+					<img src="../img/razerImg/razer01.jpg" />
+					<img src="../img/razerImg/razer02.jpg" />
+					<img src="../img/razerImg/razer03.jpg" />
+					<img src="../img/razerImg/razer04.jpg" />
+					<img src="../img/razerImg/razer05.jpg" />
+				</div>
+				
+				<!--评价部分DIV-->
+				<div class="evaluateDiv">
+					<div class="evaluateItem clearfix">
+						<div class="evalcontent pullLeft">
+							<div>
+								资深游戏宅，最近喜欢玩fps，正好鼠标滚轮摔坏了，比的很多才到这家，到手后挺喜欢的，新的，大小合适，抓握舒服，
+								用来好几天才来评价，没出现问题，2000dpi我玩吃鸡感觉刚好，5星，我会过一段时间追评的！
+							</div>
+							<div class="evaluateDate">01.30</div>
+						</div>
+						<div class="productVresion pullLeft">
+							<div>套餐类型：<span>官方标配</span></div>
+							<div>颜色分类：<span>2000DPI黑色版</span></div>
+						</div>
+						<div class="buyer pullLeft">3***助<span>（匿名）</span></div>
+					</div>
+					
+					<div class="evaluateItem clearfix">
+						<div class="evalcontent pullLeft">
+							<div>
+								超级好用。在他家买了好多东西超级好用。在他家买了好多东西超级好用。在他家买了好多东西超级好用。
+								在他家买了好多东西超级好用。在他家买了好多东西超级好用。在他家买了好多东西
+							</div>
+							<div class="evaluateDate">今天</div>
+						</div>
+						<div class="productVresion pullLeft">
+							<div>套餐类型：<span>官方标配</span></div>
+							<div>颜色分类：<span>《守望先锋》精英版</span></div>
+						</div>
+						<div class="buyer pullLeft">陈***寒<span>（匿名）</span></div>
+					</div>
+					
+					
+					<div class="evaluateItem clearfix">
+						<div class="evalcontent pullLeft">
+							<div>
+								送给男孩子的生日礼物！适合男孩用哦。鼠标比较大！磨砂面用起来手感不错。之前就用过这款。正品 ，好评！
+							</div>
+							<div class="evaluateImg"><span><img src="../img/评价01.jpg"/></span></div>
+							<div class="evaluateDate">01.30</div>
+						</div>
+						<div class="productVresion pullLeft">
+							<div>套餐类型：<span>官方标配</span></div>
+							<div>颜色分类：<span>黑色</span></div>
+						</div>
+						<div class="buyer pullLeft">
+							<div>z***4<span>（匿名）</span></div>
+							<div class="superVip">超级会员</div>
+						</div>
+					</div>
+					
+					<div class="evaluateItem clearfix">
+						<div class="evalcontent pullLeft">
+							<div>
+								很棒，有宏有dpi设置，和灯光设置，其实再加个侧键就完美了，开个玩笑。用着手感很好，我手大，适合手大的人用，舒服。
+							</div>
+							<div class="evaluateImg">
+								<span><img src="../img/评价03.01.jpg"/></span>
+								<span><img src="../img/评价03.02.jpg"/></span>
+							</div>
+							<div class="evaluateDate">01.27</div>
+						</div>
+						<div class="productVresion pullLeft">
+							<div>套餐类型：<span>官方标配</span></div>
+							<div>颜色分类：<span>炼狱蝰蛇三色灯光版</span></div>
+						</div>
+						<div class="buyer pullLeft">
+							<div>我***6<span>（匿名）</span></div>
+						</div>
+					</div>
+					
+					<div class="evaluateItem clearfix">
+						<div>
+							<div class="evalcontent pullLeft">
+								<div>
+									<div class="evaluateFirst pullLeft">
+										<span>初次评价:</span>
+										<span class="evaluateDate">01.30</span>
+									</div>
+									<div class="pullLeft">
+										<div>手感不错！</div>
+										<div class="evaluateImg"><span><img src="../img/评价02.jpg"/></span></div>
+									</div>
+								</div>
+								
+								<div class="afterEval">
+									<div><span>收货3天后追加:</span><span>是正品！</span></div>
+								</div>
+							</div>
+						</div>
+						<div class="productVresion pullLeft">
+							<div>套餐类型：<span>官方标配</span></div>
+							<div>颜色分类：<span>黑色</span></div>
+						</div>
+						<div class="buyer pullLeft">
+							<div>b***o<span>（匿名）</span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<iframe src="../sharedParts/bottomPart.html" frameborder="no" width="100%" height="535px"></iframe>
+		
+	</body>
+	<script>
+		$(function(){
+			$("img.imageproducts").mouseenter(function(){
+				var imgUrl = $(this).attr("src");
+				$("img.mainPic").attr("src", imgUrl);
+			});
+			
+			$("div.chooseImg img").click(function(){
+				var imgUrl = $(this).attr("src");
+				$("img.mainPic").attr("src", imgUrl);
+			});
+		});
+		
+		$(function(){
+			$('input#num').val(1);
+			
+			var numbers = $('input#num').val();
+			
+			$('span#increase').click(function(){
+				var numbers = $('input#num').val();
+				numbers++;
+				if(numbers > 66){
+					numbers = 66;
+				}
+				$('input#num').val(numbers);
+			});
+			
+			$('span#decrease').click(function(){
+				var numbers = $('input#num').val();
+				numbers--;
+				if(numbers < 0){
+					numbers = 0;
+				}
+				$('input#num').val(numbers);
+			});
+			
+			$('input#num').keyup(function(){
+				var numbers = $('input#num').val();
+				if(numbers > 66){
+					numbers = 66;
+				}else if(numbers < 0){
+					numbers = 1;
+				}
+				$('input#num').val(numbers);
+			});
+		});
+		
+		$(function(){
+			$("a.productcss").click(function(){
+				$("div.clickproduct").show();
+				$("div.clickeval").hide();
+				$("div.evaluateDiv").show();
+				$("div.introduction").show();
+				$("div.imgPart").show();
+				$("div.clickproduct").show();
+			});
+			
+			$("a.clickthis").click(function(){
+				$("div.introduction").hide();
+				$("div.imgPart").hide();
+				$("div.clickproduct").hide();
+				$("div.clickeval").show();
+				$("div.evaluateDiv").show();
+			});
+		});
+	</script>
+</html>
